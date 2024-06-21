@@ -27,6 +27,7 @@ export class WelcomeComponent implements OnInit{
       error => this.handleErrorResponse(error)
     );
     console.log("last line of getWelcomeMessage");
+    console.log("In this service");
   }
 
   handleSuccessfulResponse(response: any){
