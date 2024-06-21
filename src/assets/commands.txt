@@ -1,0 +1,12 @@
+git status
+git add .
+git commit -m "Your commit message here"
+git pull origin main
+git push origin main
+
+-------------------
+git config --global user.email "debanwita4dt@gmail.com"
+git config --global user.name "debanwita"
+ git branch -M main
+git remote add origin https://github.com/debanwita/todos-frontend.git
+
