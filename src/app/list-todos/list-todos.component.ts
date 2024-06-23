@@ -19,6 +19,7 @@ export class Todo{
 })
 export class ListTodosComponent implements OnInit {
 
+
   public todos : Todo[] = [];
   message : string = '';
 
@@ -73,6 +74,10 @@ export class ListTodosComponent implements OnInit {
     );
     */
     this.router.navigate(['todos',id]);
+  }
+
+  addTodo() {
+    this.router.navigate(['todos',-1]);
   }
 }
 
