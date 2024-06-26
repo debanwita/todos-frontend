@@ -14,6 +14,7 @@ export class TodoComponent implements OnInit{
   constructor(private todoService: TodoDataService,private route: ActivatedRoute,private router : Router){}
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
     this.todo = new Todo(this.id,'in28minutes','',new Date(),false);
     if(this.id!= -1){
       this.todoService.retrieveTodoById('in28minutes',this.id).subscribe(
@@ -28,9 +29,10 @@ export class TodoComponent implements OnInit{
     }
   }
   saveTodo() {
-    console.log('In save Todo');
-    if(this.id === -1){
+    console.log('In save Todo' + this.id);
+    if(this.id == -1){
         // creae todo
+        console.log('In create todo');
         this.todoService.createTodo('in28minutes',this.id).subscribe(
           data => {
             console.log(data);
@@ -41,6 +43,7 @@ export class TodoComponent implements OnInit{
           }
         )
     } else{
+      console.log('In update todo');
       this.todoService.updateTodo('in28minutes',this.id,this.todo).subscribe(
         response => {
           console.log(response);
